@@ -14,18 +14,25 @@ Claude, v0, etc are incredible- but you can't install packages, run backends or 
   - Interact with third-party APIs
   - Deploy to production from chat
   - Share your work via a URL
+  - Scaffold new projects from preconfigured templates (Astro, Next.js, or Svelte)
 
 - **AI with Environment Control**: Unlike traditional dev environments where the AI can only assist in code generation, Bolt.new gives AI models **complete control** over the entire  environment including the filesystem, node server, package manager, terminal, and browser console. This empowers AI agents to handle the entire app lifecycle—from creation to deployment.
 
 Whether you’re an experienced developer, a PM or designer, Bolt.new allows you to build production-grade full-stack applications with ease.
 
+
 For developers interested in building their own AI-powered development tools with WebContainers, check out the open-source Bolt codebase in this repo!
+
+### Project Templates
+
+Bolt ships with lightweight starter kits for Astro, Next.js, and Svelte. You can select a template by appending `?template=astro`, `?template=nextjs`, or `?template=svelte` to the URL when creating a new project.
 
 ## Tips and Tricks
 
 Here are some tips to get the most out of Bolt.new:
 
 - **Be specific about your stack**: If you want to use specific frameworks or libraries (like Astro, Tailwind, ShadCN, or any other popular JavaScript framework), mention them in your initial prompt to ensure Bolt scaffolds the project accordingly.
+- **Leverage starter templates**: Select from preconfigured Astro, Next.js, or Svelte templates when creating a project to quickly scaffold a working environment.
 
 - **Use the enhance prompt icon**: Before sending your prompt, try clicking the 'enhance' icon to have the AI model help you refine your prompt, then edit the results before submitting.
 
