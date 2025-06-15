@@ -1,5 +1,6 @@
 import { WebContainer } from '@webcontainer/api';
 import { WORK_DIR_NAME } from '~/utils/constants';
+import { applyTemplate, templates } from '../templates';
 
 interface WebContainerContext {
   loaded: boolean;
@@ -24,9 +25,21 @@ if (!import.meta.env.SSR) {
       .then(() => {
         return WebContainer.boot({ workdirName: WORK_DIR_NAME });
       })
-      .then((webcontainer) => {
+      .then(async (wc) => {
         webcontainerContext.loaded = true;
-        return webcontainer;
+
+        const params = new URLSearchParams(window.location.search);
+        const template = params.get('template');
+
+        if (template && template in templates) {
+          try {
+            await applyTemplate(template as keyof typeof templates);
+          } catch (error) {
+            console.error('Failed to apply template', error);
+          }
+        }
+
+        return wc;
       });
 
   if (import.meta.hot) {
